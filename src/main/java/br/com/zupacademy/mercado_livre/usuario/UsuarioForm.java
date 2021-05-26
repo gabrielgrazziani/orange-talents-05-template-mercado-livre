@@ -8,10 +8,13 @@ import javax.validation.constraints.Size;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import br.com.zupacademy.mercado_livre.generic.UniqueValue;
+
 public class UsuarioForm {
 
 	@NotBlank
 	@Email
+	@UniqueValue(domainClass = Usuario.class,fieldName = "login")
 	private String login;
 	@NotBlank
 	@Size(min = 6)
