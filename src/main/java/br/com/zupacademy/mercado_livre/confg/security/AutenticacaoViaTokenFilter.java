@@ -17,9 +17,9 @@ public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
 	
 
 	private TokenManager tokenManager;
-	private AutenticacaoServise autenticacaoServise;
+	private BuscaUserDetails autenticacaoServise;
 
-	public AutenticacaoViaTokenFilter(TokenManager tokenManager, AutenticacaoServise autenticacaoServise) {
+	public AutenticacaoViaTokenFilter(TokenManager tokenManager, BuscaUserDetails autenticacaoServise) {
 		this.tokenManager = tokenManager;
 		this.autenticacaoServise = autenticacaoServise;
 	}

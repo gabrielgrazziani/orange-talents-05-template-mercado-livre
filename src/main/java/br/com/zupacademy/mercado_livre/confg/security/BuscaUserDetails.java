@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import br.com.zupacademy.mercado_livre.usuario.Usuario;
 
 @Service
-public class AutenticacaoServise implements UserDetailsService{
+public class BuscaUserDetails implements UserDetailsService{
 
 	@PersistenceContext
 	private EntityManager entityManager;

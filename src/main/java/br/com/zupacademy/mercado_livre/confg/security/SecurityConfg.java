@@ -20,7 +20,7 @@ public class SecurityConfg extends WebSecurityConfigurerAdapter{
 	
 
 	@Autowired
-	private AutenticacaoServise autenticacaoServise;
+	private BuscaUserDetails autenticacaoServise;
 	
 	@Autowired
 	private TokenManager tokenManager;

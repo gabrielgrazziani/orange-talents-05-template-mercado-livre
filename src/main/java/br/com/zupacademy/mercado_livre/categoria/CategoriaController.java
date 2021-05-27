@@ -25,4 +25,5 @@ public class CategoriaController {
 		entityManager.persist(categoria);
 		return ResponseEntity.ok().build();
 	}
+
 }
