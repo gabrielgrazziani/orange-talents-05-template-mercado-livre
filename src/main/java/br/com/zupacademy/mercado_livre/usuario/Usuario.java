@@ -44,4 +44,12 @@ public class Usuario {
 		this.instanteCadastro = instanteCadastro;
 	}
 
+	public String getLogin() {
+		return this.login;
+	}
+
+	public String getSenha() {
+		return this.senha;
+	}
+
 }
