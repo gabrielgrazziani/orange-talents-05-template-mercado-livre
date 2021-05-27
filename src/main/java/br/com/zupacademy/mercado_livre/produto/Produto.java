@@ -44,7 +44,7 @@ public class Produto {
 	@Size(min = 3)
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "produto_id")
-	private Set<Caracteristica> caracteristicas;
+	private Set<CaracteristicaProduto> caracteristicas;
 	@NotBlank
 	@Size(max = 1000)
 	private String descricao;
@@ -53,7 +53,7 @@ public class Produto {
 	private Categoria categoria;
 	@NotNull
 	@ManyToOne	
-	private  Usuario usuario;
+	private  Usuario dono;
 	@NotNull
 	@PastOrPresent
 	private LocalDateTime instanteCadastro;
@@ -62,17 +62,17 @@ public class Produto {
 	public Produto(@NotBlank String nome, 
 			@NotNull @Positive BigDecimal valor,
 			@NotBlank @PositiveOrZero Integer quantidade,
-			@NotNull @Size(min = 3) Set<Caracteristica> caracteristicas,
+			@NotNull @Size(min = 3) Set<CaracteristicaProduto> caracteristicas,
 			@NotNull @Size(max = 1000) String descricao,
 			@NotNull Categoria categoria,
-			@NotNull Usuario usuario) {
+			@NotNull Usuario dono) {
 				this.nome = nome;
 				this.valor = valor;
 				this.quantidade = quantidade;
 				this.caracteristicas = caracteristicas;
 				this.descricao = descricao;
 				this.categoria = categoria;
-				this.usuario = usuario;
+				this.dono = dono;
 				this.instanteCadastro = LocalDateTime.now();
 	}
 	

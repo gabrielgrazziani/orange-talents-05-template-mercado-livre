@@ -1,9 +1,13 @@
 package br.com.zupacademy.mercado_livre.produto;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -25,7 +29,8 @@ public class ProdutoForm {
 	private Integer quantidade;
 	@NotNull
 	@Size(min = 3)
-	private Set<CaracteristicaForm> caracteristicas;
+	@Valid
+	private List<CaracteristicaProdutoForm> caracteristicas;
 	@NotBlank
 	@Size(max = 1000)
 	private String descricao;
@@ -33,9 +38,13 @@ public class ProdutoForm {
 	@ExistById(domainClass = Categoria.class)
 	private Long categoriaId;
 	
+	public List<CaracteristicaProdutoForm> getCaracteristicas() {
+		return caracteristicas;
+	}
+	
 	public ProdutoForm(@NotBlank String nome, @NotNull @Positive BigDecimal valor,
 			@NotBlank @PositiveOrZero Integer quantidade,
-			@NotNull @Size(min = 3) Set<CaracteristicaForm> caracteristicas,
+			@NotNull @Size(min = 3) List<CaracteristicaProdutoForm> caracteristicas,
 			@NotNull @Size(max = 1000) String descricao, @NotNull Long categoriaId) {
 		this.nome = nome;
 		this.valor = valor;
@@ -45,10 +54,25 @@ public class ProdutoForm {
 		this.categoriaId = categoriaId;
 	}
 
-	public Produto map(EntityManager entityManager, Usuario usuario) {
+	public Produto map(EntityManager entityManager, Usuario dono) {
 		Categoria categoria = entityManager.find(Categoria.class, categoriaId);
-		Set<Caracteristica> caracteristicas = CaracteristicaForm.map(this.caracteristicas);
-		return new Produto(nome,valor,quantidade,caracteristicas,descricao,categoria,usuario);
+		Set<CaracteristicaProduto> caracteristicas = this.caracteristicas.stream()
+				.map(c -> c.map())
+				.collect(Collectors.toSet());
+		return new Produto(nome,valor,quantidade,caracteristicas,descricao,categoria,dono);
+	}
+
+	public Set<String> buscaNomesCaracteristicaDuplicados() {
+		Set<String> nomesRepetidos = new HashSet<>();
+		Set<String> nomes = new HashSet<>();
+		for (CaracteristicaProdutoForm caracteristica : caracteristicas) {
+			String nome = caracteristica.getNome();
+			if (!nomes.add(nome)) {
+				System.out.println("teste: "+ nome);
+				nomesRepetidos.add(nome);
+			}
+		}
+		return nomesRepetidos;
 	}
 	
 }
