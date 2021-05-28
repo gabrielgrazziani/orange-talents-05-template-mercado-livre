@@ -1,4 +1,4 @@
-package br.com.zupacademy.mercado_livre.produto;
+package br.com.zupacademy.mercado_livre.produto.entity;
 
 import java.net.URI;
 

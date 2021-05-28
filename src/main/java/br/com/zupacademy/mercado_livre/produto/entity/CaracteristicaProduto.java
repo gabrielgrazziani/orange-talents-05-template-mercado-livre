@@ -1,4 +1,4 @@
-package br.com.zupacademy.mercado_livre.produto;
+package br.com.zupacademy.mercado_livre.produto.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

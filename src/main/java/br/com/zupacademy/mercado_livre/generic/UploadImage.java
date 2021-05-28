@@ -1,4 +1,4 @@
-package br.com.zupacademy.mercado_livre.produto;
+package br.com.zupacademy.mercado_livre.generic;
 
 import java.net.URI;
 import java.util.List;

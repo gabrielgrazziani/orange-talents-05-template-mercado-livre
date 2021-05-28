@@ -1,4 +1,4 @@
-package br.com.zupacademy.mercado_livre.produto;
+package br.com.zupacademy.mercado_livre.produto.controller;
 
 import java.net.URI;
 import java.util.List;
@@ -18,6 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.zupacademy.mercado_livre.confg.security.UsuarioLogado;
+import br.com.zupacademy.mercado_livre.generic.UploadImage;
+import br.com.zupacademy.mercado_livre.produto.dto.NovasImagensRequest;
+import br.com.zupacademy.mercado_livre.produto.entity.ImagemProduto;
+import br.com.zupacademy.mercado_livre.produto.entity.Produto;
 
 @RestController
 @RequestMapping("produto")

@@ -1,4 +1,4 @@
-package br.com.zupacademy.mercado_livre.produto;
+package br.com.zupacademy.mercado_livre.produto.dto;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -16,6 +16,8 @@ import javax.validation.constraints.Size;
 
 import br.com.zupacademy.mercado_livre.categoria.Categoria;
 import br.com.zupacademy.mercado_livre.generic.ExistById;
+import br.com.zupacademy.mercado_livre.produto.entity.CaracteristicaProduto;
+import br.com.zupacademy.mercado_livre.produto.entity.Produto;
 import br.com.zupacademy.mercado_livre.usuario.Usuario;
 
 public class ProdutoForm {

@@ -11,8 +11,6 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-import br.com.zupacademy.mercado_livre.produto.UploadImage;
-
 @Component
 @Profile("dev")
 public class UploadImageFake implements UploadImage {

@@ -1,6 +1,8 @@
-package br.com.zupacademy.mercado_livre.produto;
+package br.com.zupacademy.mercado_livre.produto.dto;
 
 import javax.validation.constraints.NotBlank;
+
+import br.com.zupacademy.mercado_livre.produto.entity.CaracteristicaProduto;
 
 public class CaracteristicaProdutoForm {
 

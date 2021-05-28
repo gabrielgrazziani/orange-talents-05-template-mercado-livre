@@ -1,4 +1,4 @@
-package br.com.zupacademy.mercado_livre.produto;
+package br.com.zupacademy.mercado_livre.produto.controller;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.zupacademy.mercado_livre.confg.security.UsuarioLogado;
+import br.com.zupacademy.mercado_livre.produto.CaracteristicaComNomeDuplicadoValidator;
+import br.com.zupacademy.mercado_livre.produto.dto.ProdutoForm;
+import br.com.zupacademy.mercado_livre.produto.entity.Produto;
 
 @RestController
 @RequestMapping("/produto")
