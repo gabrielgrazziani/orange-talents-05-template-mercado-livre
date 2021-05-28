@@ -80,5 +80,9 @@ public class Produto {
 	@SuppressWarnings("unused")
 	private Produto() {
 	}
+	
+	public boolean pertenceAo(Usuario usuario){
+		return dono.equals(usuario);
+	}
 
 }

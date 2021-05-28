@@ -52,4 +52,35 @@ public class Usuario {
 		return this.senha;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((instanteCadastro == null) ? 0 : instanteCadastro.hashCode());
+		result = prime * result + ((login == null) ? 0 : login.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		if (instanteCadastro == null) {
+			if (other.instanteCadastro != null)
+				return false;
+		} else if (!instanteCadastro.equals(other.instanteCadastro))
+			return false;
+		if (login == null) {
+			if (other.login != null)
+				return false;
+		} else if (!login.equals(other.login))
+			return false;
+		return true;
+	}
+
 }
