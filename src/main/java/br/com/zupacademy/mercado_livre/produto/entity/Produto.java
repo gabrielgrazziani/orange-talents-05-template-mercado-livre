@@ -84,5 +84,9 @@ public class Produto {
 	public boolean pertenceAo(Usuario usuario){
 		return dono.equals(usuario);
 	}
+	
+	public String getNome() {
+		return nome;
+	}
 
 }
