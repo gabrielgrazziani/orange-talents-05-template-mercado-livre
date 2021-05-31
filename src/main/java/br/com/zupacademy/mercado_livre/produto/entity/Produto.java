@@ -89,4 +89,16 @@ public class Produto {
 		return nome;
 	}
 
+	public BigDecimal getPreco() {
+		return this.valor;
+	}
+
+	public String getDescricao() {
+		return this.descricao;
+	}
+
+	public Set<CaracteristicaProduto> getCaracteristicas() {
+		return this.caracteristicas;
+	}
+
 }

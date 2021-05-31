@@ -28,6 +28,11 @@ public class PerguntoProduto {
 	@NotNull
 	@ManyToOne	
 	private Usuario consumidor;
+	
+	@SuppressWarnings("unused")
+	@Deprecated
+	private PerguntoProduto() {
+	}
 
 	public PerguntoProduto(@NotBlank String titulo,@NotNull Produto produto,@NotNull Usuario consumidor) {
 		this.titulo = titulo;
@@ -47,5 +52,9 @@ public class PerguntoProduto {
 	public String getTitulo() {
 		return titulo;
 	}
-
+	
+	public String nomeConsumidor() {
+		return this.consumidor.getLogin();
+	}
+	
 }

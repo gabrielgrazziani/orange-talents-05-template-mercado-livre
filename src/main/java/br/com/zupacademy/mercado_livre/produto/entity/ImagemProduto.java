@@ -21,8 +21,17 @@ public class ImagemProduto {
 	@ManyToOne
 	private Produto produto;
 	
+	@SuppressWarnings("unused")
+	@Deprecated
+	private ImagemProduto() {
+	}
+	
 	public ImagemProduto(@NotNull URI url, @NotNull Produto produto) {
 		this.url = url;
 		this.produto = produto;
+	}
+	
+	public URI getUrl() {
+		return url;
 	}
 }

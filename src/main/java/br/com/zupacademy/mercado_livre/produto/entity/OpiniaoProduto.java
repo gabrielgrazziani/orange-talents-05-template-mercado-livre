@@ -48,4 +48,20 @@ public class OpiniaoProduto {
 	@Deprecated
 	private OpiniaoProduto() {
 	}
+	
+	public Integer getNota() {
+		return nota;
+	}
+	
+	public String getDescricao() {
+		return descricao;
+	}
+	
+	public String getTitulo() {
+		return titulo;
+	}
+	
+	public String nomeUsuario() {
+		return this.usuarioQueOpinou.getLogin();
+	}
 }
